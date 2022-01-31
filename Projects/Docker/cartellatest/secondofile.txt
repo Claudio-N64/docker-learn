@@ -1,0 +1,3 @@
+docker run -p 8080:8080 -p 50000:50000 --name jenkinsprimo -v volumeTest:/var/jenkins_home jenkins/jenkins:lts-jdk11
+
+e0abd509191a485ea58651347928199e

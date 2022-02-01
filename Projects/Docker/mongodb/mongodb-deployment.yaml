@@ -30,21 +30,15 @@ spec:
                 secretKeyRef:
                   name: mongodb-secret
                   key: mongo-root-password
-# The three dashes above separate two service. Two service in one deployment
 ---
 apiVersion: v1
-kind: service
+kind: Service
 metadata:
-  # the name is random name.
   name: mongodb-service
 spec:
   selector:
-    # the app value must be the same of the pod name [row 6]
     app: mongodb
-  # now the ports
   ports:
     - protocol: TCP
-      # the service port
       port: 27017
-      #the container port of deployment.
       targetPort: 27017

@@ -18,15 +18,18 @@ spec:
         - name: mongodb
           image: mongo
           ports:
-            - containers:27017
+            - containerPort: 27017
           env:
             - name: MONGO_INITDB_ROOT_USERNAME
               valueFrom:
                 secretKeyRef:
                   name: mongodb-secret
-                  key: mongo-root-username name
+                  key: mongo-root-username
             - name: MONGO_INITDB_ROOT_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: mongodb-secret
                   key: mongo-root-password
+# The three dashes above separate two service. Two service in one deployment
+---
+
